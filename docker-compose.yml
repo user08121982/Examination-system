@@ -1,0 +1,41 @@
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    env_file:
+      - server/.env
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - exam_sys_net
+
+  backend:
+    build:
+      context: server/
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    env_file:
+      - server/.env
+    networks:
+      - exam_sys_net
+
+  frontend:
+    build:
+      context: client/
+      args:
+        REV_PROXY: true
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - exam_sys_net
+
+volumes:
+  pgdata:
+
+networks:
+  exam_sys_net:
+    driver: bridge

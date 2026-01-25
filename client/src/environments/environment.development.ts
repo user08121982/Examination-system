@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    baseURL: "http://localhost:8000/"
+    baseURL: (window.__env.revProxy ? "/api/" : "http://localhost:8000/")
 };

@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    baseURL: "https://examination-system-backend.onrender.com/"
+    baseURL: (window.__env.revProxy ? "/api/" : "https://examination-system-backend.onrender.com/")
 };

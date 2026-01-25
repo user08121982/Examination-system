@@ -1,0 +1,28 @@
+# Node / Angular
+node_modules
+dist
+.angular
+
+# Python / Django
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv
+venv
+.env
+.env.*
+
+# Git
+.git
+.gitignore
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Docker
+docker-compose.yml
