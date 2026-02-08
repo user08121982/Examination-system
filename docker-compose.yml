@@ -18,6 +18,8 @@ services:
       - db
     env_file:
       - server/.env
+    volumes:
+      - server_data:/app/data
     networks:
       - exam_sys_net
 
@@ -35,6 +37,7 @@ services:
 
 volumes:
   pgdata:
+  server_data:
 
 networks:
   exam_sys_net:

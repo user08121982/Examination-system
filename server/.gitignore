@@ -2,6 +2,6 @@
 */migrations/
 */__pycache__/
 db.sqlite3
-media/*
+data/
 process.md
 .env
